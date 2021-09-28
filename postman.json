@@ -1,0 +1,327 @@
+{
+    "info":{
+       "_postman_id":"94c21114-de02-4969-991d-f86919216c14",
+       "name":"userpersistenceassignment",
+       "schema":"https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item":[
+       {
+          "name":"Get All Users",
+          "id":"ed306a79-d4a9-4082-be0d-9b8e080d5444",
+          "request":{
+             "method":"GET",
+             "header":[
+                
+             ],
+             "url":"localhost:5000/users"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Create User",
+          "id":"eee33258-2786-4430-bc38-d2a9eb4fb65f",
+          "request":{
+             "method":"POST",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Mahesh\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"mkariya@deqode.com\",\n  \"password\": \"mahesh@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Update User",
+          "id":"341530f6-41df-425a-ae18-49b8ff3aca10",
+          "request":{
+             "method":"PUT",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Dipak\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"dkariya@deqode.com\",\n  \"password\": \"dipak@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Delete User",
+          "id":"9f710a52-e7fb-468d-9b95-10861c564465",
+          "request":{
+             "method":"DELETE",
+             "header":[
+                
+             ],
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Get User By Id",
+          "id":"69780ed2-3254-4e37-9377-02ceb3c91ae5",
+          "request":{
+             "method":"GET",
+             "header":[
+                
+             ],
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Create User with Invalid Email",
+          "id":"873b866b-b855-4a05-a603-558f4b72285c",
+          "request":{
+             "method":"POST",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Mahesh\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"in_valid_email\",\n  \"password\": \"mahesh@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Create User with Empty Password",
+          "id":"86199fca-23e6-4a1a-a7ef-e207d0cc4fb6",
+          "request":{
+             "method":"POST",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Mahesh\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"mahesh@gmail.com\",\n  \"password\": \"\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Create User with Invalid Password",
+          "id":"3d38950b-2a32-4023-9dde-1ad17e0c5622",
+          "request":{
+             "method":"POST",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Mahesh\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"mahesh@gmail.com\",\n  \"password\": \"pa\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Create User with Empty Email",
+          "id":"ea00794a-0f7c-44b4-b869-c800bb6579af",
+          "request":{
+             "method":"POST",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Mahesh\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"\",\n  \"password\": \"mahesh@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Delete User with invalid parameter",
+          "id":"60268372-8476-47f7-92dd-e63d95913b49",
+          "request":{
+             "method":"DELETE",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Mahesh\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"\",\n  \"password\": \"mahesh@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/one"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Update User With Invalid parameter",
+          "id":"cdd9ea75-9858-4807-adfa-f48a1fba47a6",
+          "request":{
+             "method":"PUT",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Dipak\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"dkariya@deqode.com\",\n  \"password\": \"dipak@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/one"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Update User With Empty Email",
+          "id":"f89eed64-bac1-4b60-bdf4-7846ad3f1233",
+          "request":{
+             "method":"PUT",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Dipak\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"\",\n  \"password\": \"dipak@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Update User With Invalid Email",
+          "id":"9010e70e-529d-4d99-8696-555ac6807dec",
+          "request":{
+             "method":"PUT",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Dipak\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"invalid_email\",\n  \"password\": \"dipak@123\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Update User With Empty Password",
+          "id":"0cf8cd85-46fc-42ed-b9b2-a6d9b65af9fe",
+          "request":{
+             "method":"PUT",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Dipak\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"kariya@gmail.com\",\n  \"password\": \"\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       },
+       {
+          "name":"Error Case: Update User With Invalid Password",
+          "id":"39ebce1a-4d78-44e4-b086-7622fd5d5dca",
+          "request":{
+             "method":"PUT",
+             "header":[
+                
+             ],
+             "body":{
+                "mode":"raw",
+                "raw":"{\n  \"givenName\": \"Dipak\",\n  \"familyName\": \"Kariya\",\n  \"email\": \"kariya@gmail.com\",\n  \"password\": \"ok\"\n}",
+                "options":{
+                   "raw":{
+                      "language":"json"
+                   }
+                }
+             },
+             "url":"localhost:5000/users/1"
+          },
+          "response":[
+             
+          ]
+       }
+    ]
+ }
