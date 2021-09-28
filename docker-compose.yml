@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  app:
+    build: 
+      context: .
+    command: npm start
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: development
+      DB_HOST: host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - conn
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - conn
+networks:
+  conn:
+    driver: bridge
