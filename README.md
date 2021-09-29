@@ -31,106 +31,86 @@ In this project we have used following dependencies
 
 
 
-`Setup NODE_ENV Variable Windows` 
+## Set NODE_ENV Variable (Windows)
 
 ```
 SET NODE_ENV=development
 ```
 
-`Setup NODE_ENV Variable Linux` 
+## Set NODE_ENV Variable (Linux)
 
 ```
 export NODE_ENV=development
 ```
 
-**Please Install docker and docker-compose before proceed**
+## Install PostgreSQL
 
-Windows : 
-```
-https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
-```
-Mac(Intel)
-```
- https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64
+https://www.postgresql.org/download/
 
-```
-Mac(M1)
-```
- https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64
-
-
-```
-Linux/Ubuntu :
-```
-sudo apt-get update
-
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update
-
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-```
-Setup PostgreSQL Manually
-
-```
-docker run --name postgresdb -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -d -p 5432:5432 postgres:alpine
-```
-
-Add Dependencies
+## Add Dependencies
 
 ```
 npm install || yarn
 ```
 
-Start Server Windows
+## Start Server Windows
 ```
 npm start || yarn start
 ```
 
-Start Server Linux
+## Start Server Linux
 ```
 npm run start:linux || yarn start:linux
 ```
 
-ES Lint
+## ES Lint
 
 ```
 yarn lint || npm run lint
 ```
 
-Test with Jest
+## Test with Jest
 
 ```
 yarn jest || npm run jest
 ```
 
-Swagger Documentation
+## Test with mocha
+
+```
+yarn test || npm run test
+```
+
+## Swagger Documentation
 
 ```
 http://localhost:5000/api-docs
 ```
+
+## Postman collection :
+```
+File available in root directory with name (postman.json)
+```
+
 ## OR
 
-Run With Docker Compose
+## Install Docker:
+
+https://docs.docker.com/engine/install/
+
+## Install Docker compose:
+
+https://docs.docker.com/compose/install/
+
+
+## Run With Docker Compose
 
 ```
 docker-compose up -d
 ```
 
 
-Visit here for API's
+## Swagger Documentation
 
 ```
 http://localhost:5000/api-docs
@@ -138,8 +118,13 @@ http://localhost:5000/api-docs
 
 
 
+## Postman collection :
+```
+File available in root directory with name (postman.json)
+```
 
-directory Structure
+##directory Structure
+
 ```
  |-src
  | |-config
